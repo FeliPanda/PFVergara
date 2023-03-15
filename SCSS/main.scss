@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Open+Sans:wght@300&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Open+Sans:wght@300&family=Raleway&family=Space+Grotesk:wght@500&display=swap');
 //partials
 @import "_vars";
 @import "_mixins";
@@ -593,7 +593,293 @@ footer{
     margin-top: 30px;
 }
 
-//starting error 404 page
+// starting donaciones pages
+
+.body_donaciones{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: $mainfont_donation;
+}
+
+.main_container_donaciones{
+    border:1px solid red;
+    width: 375px;
+    margin: auto;
+    .main_container_background_section{
+        background-image: url(../IMG/tarjeta_credito/bg-main-mobile.png);
+        background-repeat: no-repeat;
+        height: 240px;
+    }
+    .main_container_form_section{
+        padding: 90px 24px 45px;
+
+    }
+    @media (min-width:1440px){
+        width: 100%;
+        display: flex;
+        .main_container_background_section{
+            background-image: url(../IMG/tarjeta_credito/bg-main-desktop.png);
+            width: 900px;
+            height: 900px;
+        }   
+    }
+}
+
+.card_donaciones{
+    width: 288px;
+    height: 160px;
+    color: $white;
+    padding: 20px;
+    background-image: url(../IMG/tarjeta_credito/bg-card-front.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left:20px;
+    position: absolute;
+    display: block;
+    top: 200px;
+    z-index: 5;
+    @media (min-width: 1440px){
+        width: 450px;
+        height: 247px;
+        padding: 30px;
+        margin-left: 150px;
+        position: relative;
+        top: 190px;
+    }
+}
+
+.card_back{
+    width: 288px;
+    height: 160px;
+    color: $white;
+    padding: 20px;
+    background-image: url(../IMG/tarjeta_credito/bg-card-back.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position:absolute;
+    top:108px;
+    
+    margin-left:60px;
+    @media (min-width: 1440px){
+        width: 450px;
+        height: 247px;
+        padding: 30px;
+        margin-left: 250px;
+        position: relative;
+        top: 540px;
+        
+    }
+}
+
+.card_donaciones{
+    color: $white;
+    
+    .card_donaciones_logo{
+        width: 60px ;
+        height: 35px;
+        @media (min-width: 1440px){
+            width: 110px;
+            height: 60px;
+        }
+    }
+    .card_number{
+        margin-top: 25px;
+        font-size: 18px;
+        letter-spacing: 3.5px; 
+        text-align: center;
+        @media (min-width: 1440px){
+            font-size: 28px;
+        }
+    }
+
+    .card_details{
+        display: flex;
+        .card_details_name{
+            justify-content:space-between;
+            width: 80%;
+            font-size: 13px;
+            margin-left: 6px;
+            @media (min-width: 1440px){
+            font-size:18px ;
+            padding-left: 20px;
+        }
+        }
+        .card_details_date{
+            font-size: 13px;
+        }
+    }
+    @media (min-width: 1440px){
+        font-size: 18px;
+    }
+}
+
+.card_back{
+    position: absolute;
+    .card_back_cvc{
+        position: relative;
+        left: 205px;
+        top: 47px;
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        @media (min-width: 1440px){
+            font-size: 20px;
+            z-index: 5;
+            top: 77px;
+            left: 330px;
+        }
+    }
+}
+
+.rigth_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    // gap: 20px;
+    form{
+        display: grid;
+        gap: 1rem;
+        width: 350px;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(4,1fr) ;
+        font-family: $mainfont_donation;
+        label{
+            color:$very_dark-violet;
+            margin-bottom: .3rem;
+            text-transform: uppercase;
+            // border: 1px solid $Dark_grayish-violet;
+            // border-radius: 6px;
+            font-family: $mainfont_donation;
+            input{
+                padding: .5rem;
+                font-size: 18px;
+                border: 1px solid $Dark_grayish-violet;            
+            }
+        }    
+        input{
+            padding: .5rem;
+            font-size: 18px;
+            border: 1px solid $Dark_grayish-violet;        
+        }
+        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button{
+            -webkit-appearance: none;
+            margin: 0;
+        }           
+        input::placeholder{
+            font-family: inherit;
+            color: $Dark_grayish-violet;
+        }
+        input:focus{
+            outline-color: hsl(249,99%,64%);
+        }
+        .grid_1{
+            display: flex;
+            flex-direction: column;
+            grid-column: 2 span;
+        }
+        .grid_2{
+            display: flex;
+            flex-direction: column;
+            grid-column: 2 span;
+        }
+        .grid_3{
+            display: flex;
+            flex-direction: column;
+        }
+        .grid_4{
+            display: flex;
+            flex-direction: column;
+            grid-column: 1 span;
+        }
+    }
+}
+
+.card_information{
+    display: flex;
+    grid-column: 2 span;
+    gap: 1rem;
+    #card_donations_date{
+        display: flex;
+        flex-direction: column;
+        grid-column: 1 span;
+        .two_inp{
+            display: flex;
+        }
+    }
+}
+
+.two_inp div{
+    flex-direction: column;
+}
+
+#card_donations_date div input{
+        width: 70px;
+        margin-inline: .5rem;
+        margin-left: 0;
+}
+
+#card_cvc{
+    width: 99px;
+}
+
+form button{
+    grid-column: 2 span;
+    font-size: 18px;
+    height: 50px;
+    color: $white;
+    border-radius: 6px;
+    background-color: $very_dark-violet;
+    cursor: pointer;
+}
+
+.thank{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    .thanks_donations{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+    p{
+        font-size: 18px;
+        color: $Dark_grayish-violet;
+    }
+    button{
+        color: $white;
+        width: 100%;
+        border-radius: 6px;
+        padding: 1rem;
+        font-size: 18px;
+        background-color: $very_dark-violet;
+        cursor: pointer;
+    }
+}
+.hidden{
+    display: none !important;
+}
+
+
+
+// @media screen and (max-width:1023){
+//     .front{}
+// }
+    
+
+
+//finishing donation page
+
+
+
+
+
+
+
+// starting error 404 page
 
 .body_error{
     background: rgb(8, 28, 34);
